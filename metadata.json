@@ -2,12 +2,15 @@
   "name": "znathanss-node_exporter",
   "version": "0.1.0",
   "author": "znathanss",
-  "summary": "",
+  "summary": "Setup node exporter",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/znathanss/puppet-node_exporter",
+  "issues_url": "https://github.com/znathanss/puppet-node_exporter/issues",
   "dependencies": [
-    { "name": "puppet/archive"},
-    { "name": "puppet/letsencrypt"}
+    {
+      "name": "puppet/archive",
+      "version_requirement": ">= 4.0.0 < 6.0.0"
+    }
   ],
   "operatingsystem_support": [
     {
