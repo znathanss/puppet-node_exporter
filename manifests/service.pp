@@ -18,18 +18,11 @@ class node_exporter::service {
     refreshonly => true,
     subscribe   => File['/etc/systemd/system/node_exporter.service']
   }
-  file { '/etc/sysconfig/node_exporter':
-    ensure => file,
-    owner  => 'root',
-    group  => 'root',
-    notify => Service['node_exporter'],
-  }
   service { 'node_exporter':
     ensure  => true,
     enable  => true,
     require => [
-      File['/etc/systemd/system/node_exporter.service'],
-      File['/etc/sysconfig/node_exporter']
+      File['/etc/systemd/system/node_exporter.service']
     ]
   }
 }
